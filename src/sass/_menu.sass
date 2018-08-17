@@ -1,0 +1,132 @@
+
+/* Advanced Checkbox Hack */
+body
+    -webkit-animation: bugfix infinite 1s
+
+
+@-webkit-keyframes bugfix
+    from 
+        padding: 0
+    
+    to 
+        padding: 0
+
+.header
+    +clr 
+
+.container
+    max-width: 940px
+
+.content 
+    float: left
+    font: 1em 'Open Sans', sans-serif
+    margin: .75em .5em 0 .5em
+    transition: margin .3s ease-in-out
+
+.content > p 
+    margin: .25em 0 .75em 0
+    text-align: justify
+
+input[type=checkbox] 
+    position: absolute
+    top: -9999px
+    left: -9999px
+
+label 
+    position: absolute
+    left: 0
+    display: none
+    width: 2em
+    height: 2.25em
+    padding: .35em
+    font-size: 1.1em
+    color: #fff
+    transition: color .3s ease-in-out
+    cursor: pointer
+    user-select: none
+    margin: 0
+    background: rgba(0, 0, 0, 0.4)
+
+.nav
+    margin: 0 auto
+    width: 100%
+    float: right
+    text-align: right
+    +clr
+    ul 
+        float: right
+
+li 
+    float: left
+    text-align: center
+    margin-right: 15px
+    display: table
+
+.nav__link
+    font-size: 26px
+    text-decoration: none
+    color: #000000
+    border-bottom: 3px solid rgba(0,0,0,0)
+    &:hover
+        font-weight: bold
+        border-bottom: 3px solid orange
+
+@media screen and (max-width: 44em)
+    $menu_width: 20em
+
+    html, body
+        margin: 0
+        overflow-x: hidden
+    
+    .content      
+        margin: 2.5em .5em 0 .5em
+
+    nav[role="off-canvas"] 
+        position: absolute
+        top: 3em
+        left: -$menu_width
+        width: $menu_width
+        opacity: 0
+        ul > li
+                height: 100%
+                width: 100%
+                margin: 0
+                text-align: left
+        ul > li:hover 
+                box-shadow: inset 0 0 0 0.15em rgba(255, 255, 255, 0.45)
+                border-bottom: 3px solid orange
+    label
+        display: block
+
+    label:after
+        position: absolute
+        top: 0
+        right: .25em
+        content: "\2261"
+        font-size: 1.8em
+
+    label:hover,
+    input:checked ~ label
+        color: #000
+
+    input:checked ~ nav[role="off-canvas"]
+        opacity: 1
+        left: 0
+        box-shadow: -30em 0 0 30em rgba(0, 0, 0, 0.3)
+
+    input:checked ~ nav[role="off-canvas"] ul > li 
+        padding: .55em .55em .55em 1.5em
+    
+    input:checked ~ nav[role="off-canvas"] ul > li:hover 
+        padding-left: 3.5em
+    
+    input:checked ~ nav[role="off-canvas"] ul > li:after
+        position: absolute
+        right: .25em
+        content: "\203A"
+        font: bold 1.4em sans-serif
+        color: inherit
+
+    input:checked ~ .content
+        margin-left: $menu_width + .5em
+        margin-right: -($menu_width + .5em)

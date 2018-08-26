@@ -2,7 +2,7 @@
 /* Advanced Checkbox Hack */
 body
     -webkit-animation: bugfix infinite 1s
-
+    font-family: "Martel", sans-serif
 
 @-webkit-keyframes bugfix
     from 
@@ -64,7 +64,7 @@ label
     &__link
         text-decoration: none
         font-size: 26px
-        font-family: "Martel"
+        font-family: "Martel", sans-serif
     &__part1
         color: #0e1d2b
     &__part2
@@ -83,6 +83,15 @@ label
     text-align: right
     ul 
         float: right
+    &__link
+        font-size: 26px
+        font-family: "Martel", sans-serif
+        text-decoration: none
+        color: #000000
+        border-bottom: 3px solid rgba(0,0,0,0)
+        &:hover
+            font-weight: bold
+            border-bottom: 3px solid orange
 
 li 
     float: left
@@ -90,22 +99,12 @@ li
     margin-right: 15px
     display: table
 
-.nav__link
-    font-size: 26px
-    text-decoration: none
-    color: #000000
-    border-bottom: 3px solid rgba(0,0,0,0)
-    &:hover
-        font-weight: bold
-        border-bottom: 3px solid orange
-
 @media screen and (max-width: 44em)
     $menu_width: 20em
 
     html, body
         margin: 0
         overflow-x: hidden
-        overflow-y: hidden
     
     .header
         margin: 0
@@ -156,6 +155,11 @@ li
     label:hover,
     input:checked ~ label
         color: #000
+
+    .nav
+        &__link
+            &:hover
+                border-bottom: none
 
     input:checked ~ .header > .container > nav[role="off-canvas"]
         opacity: 1

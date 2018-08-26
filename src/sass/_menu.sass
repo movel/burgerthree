@@ -11,6 +11,9 @@ body
     to 
         padding: 0
 
+*
+    box-sizing: border-box
+
 .header
     +clr 
 
@@ -19,21 +22,7 @@ body
     margin: 0 auto
     text-align: center
 
-.logo
-    text-decoration: none
-    font-size: 26px
-    font-family: "Martel"
-    line-height: 1.2
-    &__part1
-        color: #0e1d2b
-    &__part2
-        font-weight: bold
-        color: #ffa326
-    &:hover 
-        font-weight: bold
-
 .content 
-    float: left
     font: 1em 'Open Sans', sans-serif
     margin: .75em .5em 0 .5em
     transition: margin .3s ease-in-out
@@ -62,11 +51,33 @@ label
     margin: 0
     background: rgba(0, 0, 0, 0.4)
 
+.logo
+    font-size: 26px
+    font-family: "Martel"
+    line-height: 1.2
+    float: left
+    display: inline-block
+    padding: 50px 0
+    width: 30%
+    +clr
+    &__link
+        text-decoration: none
+    &__part1
+        color: #0e1d2b
+    &__part2
+        font-weight: bold
+        color: #ffa326
+    &:hover 
+        font-weight: bold
+
 .nav
     margin: 0 auto
-    width: 100%
+    padding: 50px 0
+    line-height: 1.0
+    width: 70%
     float: right
     text-align: right
+    display: inline-block
     +clr
     ul 
         float: right
@@ -93,12 +104,23 @@ li
         margin: 0
         overflow-x: hidden
     
+    .header
+        margin: 0
+
+    .container
+        margin: 0
+        padding: 0
+    
     .content      
         margin: 2.5em .5em 0 .5em
 
     .logo
+        clear: left
         float: right
-        margin-right: 15px
+        width: 80%
+        display: inline-block
+        margin-top: 15px
+        padding: 0
 
     nav[role="off-canvas"] 
         position: absolute
@@ -106,6 +128,7 @@ li
         left: -$menu_width
         width: $menu_width
         opacity: 0
+        padding: 0
         ul > li
                 height: 100%
                 width: 100%
@@ -131,18 +154,18 @@ li
     input:checked ~ label
         color: #000
 
-    input:checked ~ .header > nav[role="off-canvas"]
+    input:checked ~ .header > .container > nav[role="off-canvas"]
         opacity: 1
         left: 0
         // box-shadow: -30em 0 0 30em rgba(0, 0, 0, 0.3)
 
-    input:checked ~ .header > nav[role="off-canvas"] ul > li 
+    input:checked ~ .header > .container > nav[role="off-canvas"] ul > li 
         padding: .55em .55em .55em 1.5em
     
-    input:checked ~ .header > nav[role="off-canvas"] ul > li:hover 
+    input:checked ~ .header > .container > nav[role="off-canvas"] ul > li:hover 
         padding-left: 3.5em
     
-    input:checked ~ .header > nav[role="off-canvas"] ul > li:after
+    input:checked ~ .header > .container > nav[role="off-canvas"] ul > li:after
         position: absolute
         right: .25em
         content: "\203A"

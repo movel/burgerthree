@@ -15,16 +15,21 @@ body
     box-sizing: border-box
 
 .header
+    margin: 50px auto
+    max-width: 940px
+    width: 100%
     +clr 
 
 .container
-    max-width: 940px
+    width: 100%
     margin: 0 auto
+    padding: 0
     text-align: center
+    position: relative
 
 .content 
     font: 1em 'Open Sans', sans-serif
-    margin: .75em .5em 0 .5em
+    margin: .75em 0 0 0
     transition: margin .3s ease-in-out
 
 .content > p 
@@ -52,16 +57,14 @@ label
     background: rgba(0, 0, 0, 0.4)
 
 .logo
-    font-size: 26px
-    font-family: "Martel"
-    line-height: 1.2
-    float: left
-    display: inline-block
-    padding: 50px 0
-    width: 30%
-    +clr
+    line-height: 1.0
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
     &__link
         text-decoration: none
+        font-size: 26px
+        font-family: "Martel"
     &__part1
         color: #0e1d2b
     &__part2
@@ -71,14 +74,13 @@ label
         font-weight: bold
 
 .nav
-    margin: 0 auto
-    padding: 50px 0
     line-height: 1.0
-    width: 70%
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    right: 0
     float: right
     text-align: right
-    display: inline-block
-    +clr
     ul 
         float: right
 
@@ -103,6 +105,7 @@ li
     html, body
         margin: 0
         overflow-x: hidden
+        overflow-y: hidden
     
     .header
         margin: 0
@@ -115,15 +118,15 @@ li
         margin: 2.5em .5em 0 .5em
 
     .logo
-        clear: left
+        position: relative
+        top: 15px
+        right: 15px
+        transform: translateY(0)
         float: right
-        width: 80%
-        display: inline-block
-        margin-top: 15px
-        padding: 0
 
     nav[role="off-canvas"] 
         position: absolute
+        transform: translateY(0)
         top: 3em
         left: -$menu_width
         width: $menu_width

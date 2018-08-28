@@ -12,20 +12,22 @@
     &:nth-child(3n+3)
         margin-right: 0
         right: 0
+        +r(640)
+            margin: 0 auto
     &__img
         max-width: 100%
-        height: 150px
+        height: 155px
         img 
             width: 100%
         +r(620)
             margin: 15px auto
-            height: 250px
+            height: 255px
     &__title
         display: block
         font-size: 22.63px
         font-family: "Rubik"
         color: #f39c22
-        line-height: 0.692
+        line-height: 1.2
         text-align: center
         margin: 7% 0
     &__text
@@ -35,10 +37,26 @@
         color: #0b1d2c
         line-height: 1.286
         text-align: center
+        margin: 7% auto
     &__button
         height: 30px
         width: 100%
         background-color: #e1e1e1
+    &__backs, &__kj
+        margin: 0 5px
+    &__backs
+        font-size: 20px
+        font-family: "Rubik"
+        color: #0b1d2c
+        line-height: 0.783
+        text-align: center
+    &__kj
+        font-size: 12.18px
+        font-family: "Martel"
+        color: #485058
+        line-height: 1.286
+        text-align: center
     +r(620)
+        float: none
         margin: 0 auto
-        width: 95%
+        width: 75%

@@ -2,13 +2,16 @@
     margin-top: 60px
     &__body
         background-color: #0d1e2d
+        +clr
     &__container
         max-width: 725px
         margin: 0 auto
-        padding: 15px 0
+        padding: 30px 0
     
 .form
     width: 35.862068965517241379310344827586%
+    float: left
+    +clr
     &__title
         font-size: 12.18px
         font-family: "Martel"
@@ -33,3 +36,27 @@
             text-align: center
     &__textarea
         display: block
+
+.local
+    float: right
+    width: 43.862068965517241379310344827586%
+    +clr
+    &__address
+        font-size: 18.52px
+        font-family: "Martel"
+        color: #ffffff
+        line-height: 0.979
+    &__call
+        display: inline-block
+        font-size: 18.52px
+        font-family: "Martel"
+        color: #ffffff
+        line-height: 0.979
+    &__phone
+        display: inline-block
+        font-size: 46.83px
+        font-family: "Martel"
+        color: #ffa326
+        font-weight: bold
+        line-height: 0.979
+        text-align: center

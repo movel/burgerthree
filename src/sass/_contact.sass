@@ -12,12 +12,17 @@
     width: 35.862068965517241379310344827586%
     float: left
     +clr
+    +r(640)
+        float: none
+        width: 100%
     &__title
         font-size: 12.18px
         font-family: "Martel"
         color: #ffffff
         line-height: 1
         text-align: left
+        +r(640)
+            margin: 0 10px
     &__input, &__button
         display: block
         line-height: 0.8
@@ -25,6 +30,9 @@
         input 
             width: 100%
             height: 30px
+            +r(640)
+                width: 95%
+                margin: 0 10px
     &__button
         input
             background-color: #ffa326
@@ -36,16 +44,25 @@
             text-align: center
     &__textarea
         display: block
+        +r(640)
+            width: 95%
+            margin: 0 10px
 
 .local
     float: right
     width: 43.862068965517241379310344827586%
     +clr
+    +r(640)
+        float: none
+        width: 95%
+        margin: 10px auto
     &__address
         font-size: 18.52px
         font-family: "Martel"
         color: #ffffff
         line-height: 0.979
+        +r(640)
+            margin: 10px auto
     &__call
         display: inline-block
         font-size: 18.52px
@@ -60,3 +77,6 @@
         font-weight: bold
         line-height: 0.979
         text-align: center
+    img 
+        +r(640)
+            width: 95%
